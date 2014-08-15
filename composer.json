@@ -1,0 +1,34 @@
+{
+    "name": "amacgregor/patchwork",
+    "description": "Pending Description",
+    "authors": [
+        {
+            "name": "Allan MacGregor",
+            "email": "amacgregor@allanmacgregor.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "magetest/magento-phpspec-extension": "~2.0",
+        "antecedent/patchwork": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": [
+                "app",
+                "app/code/local",
+                "app/code/community",
+                "lib",
+                "/srv/www/ce1810.demacmedia.com/public_html/app",
+                "/srv/www/ce1810.demacmedia.com/public_html/app/code/core",
+                "/srv/www/ce1810.demacmedia.com/public_html/app/code/local",
+                "/srv/www/ce1810.demacmedia.com/public_html/app/code/community",
+                "/srv/www/ce1810.demacmedia.com/public_html/lib"
+            ]
+        }
+    }
+}

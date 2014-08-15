@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Amacgregor_Patchwork>
+            <version>0.1.0</version>
+        </Amacgregor_Patchwork>
+    </modules>
+    <global>
+        <models>
+            <amacgregor_patchwork>
+                <class>Amacgregor_Patchwork_Model</class>
+            </amacgregor_patchwork>
+        </models>
+    </global>
+</config>
