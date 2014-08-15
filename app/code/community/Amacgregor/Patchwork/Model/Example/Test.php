@@ -8,4 +8,10 @@ class Amacgregor_Patchwork_Model_Example_Test extends Mage_Core_Model_Abstract
         // TODO: write logic here
         return Mage::getModel('catalog/product');
     }
+
+    public function getCustomer()
+    {
+        // TODO: write logic here
+        return Mage::getModel('customer/customer');
+    }
 }

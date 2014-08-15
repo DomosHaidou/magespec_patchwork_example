@@ -19,7 +19,7 @@ class Amacgregor_Patchwork_Model_Example_TestSpec extends ObjectBehavior
          *
          * This is a proof of concept and should be moved into a helper or some sort of extension.
          */
-        \Patchwork\replace('Mage::getModel', function($modelClass = '', $arguements = array()) {
+        $patch = \Patchwork\replace('Mage::getModel', function($modelClass = '', $arguements = array()) {
 
             $prophet = new \Prophecy\Prophet;
             $prophecy = $prophet->prophesize();
@@ -30,5 +30,28 @@ class Amacgregor_Patchwork_Model_Example_TestSpec extends ObjectBehavior
         });
 
         $this->getProduct()->shouldReturnAnInstanceOf('Mage_Catalog_Model_Product');
+        \Patchwork\undo($patch);
+    }
+
+
+    function it_should_return_a_completely_different_model()
+    {
+        /**
+         * Example usage of Patchwork to override Mage::getModel
+         *
+         * This is a proof of concept and should be moved into a helper or some sort of extension.
+         */
+        $patch = \Patchwork\replace('Mage::getModel', function($modelClass = '', $arguements = array()) {
+
+            $prophet = new \Prophecy\Prophet;
+            $prophecy = $prophet->prophesize();
+            $prophecy->willExtend('\Mage_Customer_Model_Customer');
+            $dummy = $prophecy->reveal();
+
+            return $dummy; // could also do some other sort of logging if you want this to work with actual pageloads.
+        });
+        $this->getCustomer()->shouldReturnAnInstanceOf('Mage_Customer_Model_Customer');
+        \Patchwork\undo($patch);
+
     }
 }
